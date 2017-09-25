@@ -2,4 +2,28 @@
     <string name="app_name">Textbook</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
+
+    <string name="heureDeb">Heure début:</string>
+    <string name="heureFin">Heure fin:</string>
+    <string name="description">Description:</string>
+    <string name="matiere">Matière:</string>
+    <string name="cahier">Cahier de texte</string>
+    <string name="ajoutmatiere">Etudiants</string>
+    <string name="ajoutCour">Professeurs</string>
+    <string name="unite">Unités enseignement</string>
+    <string name="creditUE">Crédits</string>
+    <string name="responsable">Responsable</string>
+    <string name="nom">Nom</string>
+    <string name="prenom">Prenom</string>
+    <string name="specialite">Specialite</string>
+    <string name="email">Email</string>
+    <string name="telephone">Telephone</string>
+    <string name="sex">Sexe</string>
+    <string name="f">Femme</string>
+    <string name="h">Homme</string>
+    <string name="em">Email</string>
+    <string name="aj">Ajouter</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

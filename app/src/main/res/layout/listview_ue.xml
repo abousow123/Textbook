@@ -8,9 +8,20 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.sow_a.textbook.MainActivity$PlaceholderFragment">
 
-    <TextView
-        android:id="@+id/section_label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+
+        <ListView
+            android:id="@+id/listUE"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </ListView>
+        <Button
+            android:id="@+id/butAjoutUE"
+            android:layout_width="70sp"
+            android:layout_height="50sp"
+            android:background="@color/colorPrimaryDark"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="29dp" />
 
 </RelativeLayout>

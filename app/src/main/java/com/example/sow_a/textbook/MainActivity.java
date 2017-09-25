@@ -19,6 +19,10 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import com.example.sow_a.textbook.fragments.Fr_cours;
+import com.example.sow_a.textbook.fragments.Fr_matieres;
+import com.example.sow_a.textbook.fragments.Fr_ue;
+
 public class MainActivity extends AppCompatActivity {
 
     /**
@@ -54,14 +58,6 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
     }
 
@@ -116,9 +112,10 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
+            View rootView = inflater.inflate(R.layout.cours, container, false);
+           // TextView textView = (TextView) rootView.findViewById(R.id.section_label);
+
+         //   textView.setText(getString(R.string.section_format, getArguments().getInt(ARG_SECTION_NUMBER)));
             return rootView;
         }
     }
@@ -135,9 +132,19 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            switch (position){
+                case 0 :
+                    Fr_cours cours = new Fr_cours() ;
+                    return cours ;
+                case 1 :
+                    Fr_matieres matieres = new Fr_matieres() ;
+                    return  matieres;
+                case 2 :
+                    Fr_ue ue = new Fr_ue() ;
+                    return ue ;
+                default:
+                    return  null ;
+            }
         }
 
         @Override
@@ -150,11 +157,11 @@ public class MainActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "SECTION 1";
+                    return "Cours";
                 case 1:
-                    return "SECTION 2";
+                    return "Matières";
                 case 2:
-                    return "SECTION 3";
+                    return "Unités d'enseignement";
             }
             return null;
         }
