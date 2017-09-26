@@ -19,6 +19,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activites.AjoutCour"
+            android:label="@string/title_activity_ajout_cour"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activites.AjoutMatiere"
+            android:label="@string/title_activity_ajout_matiere"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

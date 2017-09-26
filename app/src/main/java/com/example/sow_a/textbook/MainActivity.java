@@ -3,6 +3,7 @@ package com.example.sow_a.textbook;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -18,7 +19,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.sow_a.textbook.fragments.Fr_ajoutCours;
 import com.example.sow_a.textbook.fragments.Fr_cours;
 import com.example.sow_a.textbook.fragments.Fr_matieres;
 import com.example.sow_a.textbook.fragments.Fr_ue;
@@ -40,10 +43,16 @@ public class MainActivity extends AppCompatActivity {
      */
     private ViewPager mViewPager;
 
+    private FragmentManager fragmentManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -57,6 +66,8 @@ public class MainActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+
+
 
 
     }
@@ -78,6 +89,16 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            return true;
+        }
+
+        if(id == R.id.test){
+           /* Fr_ajoutCours r  = new Fr_ajoutCours() ;
+            fragmentTransaction = fragmentManager.beginTransaction() ;
+            fragmentTransaction.replace(R.id.container,r) ;
+            fragmentTransaction.commit() ;*/
+
+            Toast.makeText(getApplicationContext(),"cxcsefd",Toast.LENGTH_LONG).show();
             return true;
         }
 

@@ -1,16 +1,20 @@
 package com.example.sow_a.textbook.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
 
 import com.example.sow_a.textbook.R;
+import com.example.sow_a.textbook.activites.AjoutCour;
+import com.example.sow_a.textbook.activites.AjoutMatiere;
 import com.example.sow_a.textbook.dao.DAO;
 import com.example.sow_a.textbook.metier.Matiere;
 
@@ -22,6 +26,7 @@ public class Fr_matieres extends Fragment {
 
     ArrayList<Matiere> matiereArrayList ;
 
+    Button butAjoutMatiere;
 
     DAO dao ;
     ListView listView ;
@@ -50,8 +55,17 @@ public class Fr_matieres extends Fragment {
         ArrayAdapter<Matiere> adapter = new MyListAdapter() ;
         listView.setAdapter(adapter);
 
+        butAjoutMatiere = (Button)view.findViewById(R.id.butAjoutMatiere) ;
 
 
+        butAjoutMatiere.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                startActivity(new Intent(Fr_matieres.super.getActivity(), AjoutMatiere.class));
+
+            }
+        });
         // Inflate the layout for this fragment
         return view ;
     }
